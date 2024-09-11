@@ -1,0 +1,152 @@
+/* Header.css */
+
+.header {
+  background-color: #2d3748; /* Gris oscuro */
+  color: #f5f5f5; /* Gris claro para el texto */
+  padding: 1rem;
+}
+
+.header-container {
+  max-width: 2200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  order: 1;
+}
+
+.logo-link {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #d4b6a5; /* Beige cardamomo */
+  text-decoration: none;
+}
+
+.nav {
+  order: 2;
+  width: auto;
+  margin-top: 0.5rem;
+}
+
+.nav-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-link {
+  color: #f5f5f5; /* Gris claro para los enlaces */
+  font-size: 16px;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #d4b6a5; /* Beige cardamomo para el hover */
+}
+
+.header-actions {
+  order: 2;
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* Espacio entre los elementos */
+}
+
+.search-container {
+  position: relative;
+  width: 300px; /* Ancho inicial */
+  height: 40px; /* Altura inicial */
+  margin: 20px 0;
+  transition: all 0.3s ease;
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  background-color: #4a5568; /* Gris oscuro para el input */
+  color: #f5f5f5;
+  border: none;
+  border-radius: 20px;
+  padding: 0 0 0 20px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-button {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #e2e8f0; /* Gris más claro para el botón */
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.search-container.expanded {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.search-container.expanded .search-input {
+  box-shadow: 0 0 10px rgba(212, 182, 165, 0.5); /* Beige cardamomo suave */
+}
+
+.cart-link {
+  position: relative;
+  color: #f5f5f5; /* Gris claro para el enlace del carrito */
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.cart-count {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: #d4b6a5; /* Beige cardamomo */
+  color: #2d3748; /* Gris oscuro para el texto del contador */
+  border-radius: 50%;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.profile-link,
+.login-button {
+  color: #f5f5f5; /* Gris claro para los enlaces */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.profile-link:hover {
+  color: #d4b6a5; /* Beige cardamomo para el hover */
+}
+
+.login-button {
+  background-color: #d4b6a5; /* Beige cardamomo */
+  color: #2d3748; /* Gris oscuro para el texto del botón */
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #b89d8d; /* Beige ligeramente más oscuro para hover */
+}
+
+@media (min-width: 768px) {
+  /* Ajustes responsivos si es necesario */
+}

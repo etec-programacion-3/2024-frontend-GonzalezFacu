@@ -1,23 +1,73 @@
-.loader-container {
+/* From Uiverse.io by G4b413l */
+.newtons-cradle {
+  margin: 15px;
+  --uib-size: 25px;
+  --uib-speed: 1.2s;
+  --uib-color: #9f9f9f;
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: var(--uib-size);
+  height: var(--uib-size);
 }
 
-.loader {
-  border: 5px solid #f3f3f3; /* Light grey */
-  border-top: 5px solid #3498db; /* Blue */
+.newtons-cradle__dot {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 25%;
+  transform-origin: center top;
+}
+
+.newtons-cradle__dot::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 25%;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  animation: spin 2s linear infinite;
+  background-color: var(--uib-color);
 }
 
-@keyframes spin {
+.newtons-cradle__dot:first-child {
+  animation: swing var(--uib-speed) linear infinite;
+}
+
+.newtons-cradle__dot:last-child {
+  animation: swing2 var(--uib-speed) linear infinite;
+}
+
+@keyframes swing {
   0% {
     transform: rotate(0deg);
+    animation-timing-function: ease-out;
   }
-  100% {
-    transform: rotate(360deg);
+
+  25% {
+    transform: rotate(70deg);
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes swing2 {
+  0% {
+    transform: rotate(0deg);
+    animation-timing-function: linear;
+  }
+
+  50% {
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    transform: rotate(-70deg);
+    animation-timing-function: ease-in;
   }
 }

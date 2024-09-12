@@ -1,31 +1,28 @@
 import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/Form.css";
-import LoadingIndicator from "./LoacdingIndicator";
+import "../styles/LoginForm.css";
+import LoadingIndicator from "./LoadingIndicator";
 
-function Form({ route, method }) {
+function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const { setIsAuthorized } = useAuth();
   const navigate = useNavigate();
-
-  const name = method === "login" ? "Login" : "Register";
 
   const handleSubmit = async (e) => {
     setLoading(true);
     e.preventDefault();
 
     try {
-      const res = await api.post(route, { username, password });
-      if (method === "login") {
-        localStorage.setItem(ACCESS_TOKEN, res.data.access);
-        localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
-        navigate("/");
-      } else {
-        navigate("/login");
-      }
+      const res = await api.post("/api/token/", { username, password });
+      localStorage.setItem(ACCESS_TOKEN, res.data.access);
+      localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
+      setIsAuthorized(true);
+      navigate("/");
     } catch (error) {
       alert(error);
     } finally {
@@ -35,13 +32,14 @@ function Form({ route, method }) {
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
-      <h1>{name}</h1>
+      <h1>Login</h1>
       <input
         className="form-input"
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
+        required
       />
       <input
         className="form-input"
@@ -49,13 +47,25 @@ function Form({ route, method }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
+        required
       />
       {loading && <LoadingIndicator />}
       <button className="form-button" type="submit">
-        {name}
+        Login
       </button>
+      <div className="form-links">
+        <a href="/forgot-password" className="form-link">
+          Olvidé mi contraseña
+        </a>
+        <p>
+          ¿No tienes una cuenta?{" "}
+          <a href="/register" className="form-link">
+            Regístrate
+          </a>
+        </p>
+      </div>
     </form>
   );
 }
 
-export default Form;
+export default LoginForm;

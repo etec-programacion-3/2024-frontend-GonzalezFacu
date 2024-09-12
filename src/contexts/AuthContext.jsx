@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from "react";
 import api from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode"; // Asegúrate de que esté bien importado
 
 export const AuthContext = createContext();
 
@@ -20,14 +20,18 @@ export function AuthProvider({ children }) {
         return;
       }
 
-      const decoded = jwtDecode(token);
-      const tokenExpiration = decoded.exp;
-      const now = Date.now() / 1000;
+      try {
+        const decoded = jwtDecode(token);
+        const tokenExpiration = decoded.exp;
+        const now = Date.now() / 1000;
 
-      if (tokenExpiration < now) {
-        await refreshToken();
-      } else {
-        setIsAuthorized(true);
+        if (tokenExpiration < now) {
+          await refreshToken();
+        } else {
+          setIsAuthorized(true);
+        }
+      } catch (error) {
+        setIsAuthorized(false);
       }
     };
 

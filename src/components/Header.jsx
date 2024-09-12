@@ -5,15 +5,6 @@ import "../styles/Header.css";
 
 function Header() {
   const { isAuthorized } = useAuth();
-  const [authState, setAuthState] = useState(isAuthorized);
-
-  useEffect(() => {
-    setAuthState(isAuthorized);
-  }, [isAuthorized]);
-
-  const profileLink = authState ? "/perfil" : "/login";
-  const profileText = authState ? "👤 Mi Perfil" : "Login";
-  const profileClass = authState ? "profile-link" : "login-button";
 
   return (
     <header className="header">
@@ -42,8 +33,8 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/suscripciones" className="nav-link">
-                Suscripciones
+              <Link to="/planes" className="nav-link">
+                Planes
               </Link>
             </li>
             <li>
@@ -69,9 +60,15 @@ function Header() {
             <span className="cart-count">0</span>
           </Link>
 
-          <Link to={profileLink} className={profileClass}>
-            {profileText}
-          </Link>
+          {isAuthorized ? (
+            <Link to="/perfil" className="profile-link">
+              👤 Mi Perfil
+            </Link>
+          ) : (
+            <Link to="/login" className="login-button">
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </header>

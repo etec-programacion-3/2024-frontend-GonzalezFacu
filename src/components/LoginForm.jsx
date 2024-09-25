@@ -7,7 +7,7 @@ import "../styles/LoginForm.css";
 import LoadingIndicator from "./LoadingIndicator";
 
 function LoginForm() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState(""); // Cambia `username` a `email`
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const { setIsAuthorized } = useAuth();
@@ -18,13 +18,13 @@ function LoginForm() {
     e.preventDefault();
 
     try {
-      const res = await api.post("/api/token/", { username, password });
+      const res = await api.post("/api/token/", { email, password }); // Envía `email` en lugar de `username`
       localStorage.setItem(ACCESS_TOKEN, res.data.access);
       localStorage.setItem(REFRESH_TOKEN, res.data.refresh);
       setIsAuthorized(true);
       navigate("/");
     } catch (error) {
-      alert(error);
+      alert(error.response.data.detail || "Error al iniciar sesión");
     } finally {
       setLoading(false);
     }
@@ -36,9 +36,9 @@ function LoginForm() {
       <input
         className="form-input"
         type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Username"
+        value={email} // Cambia `username` a `email`
+        onChange={(e) => setEmail(e.target.value)} // Cambia `setUsername` a `setEmail`
+        placeholder="Email" // Cambia el placeholder a "Email"
         required
       />
       <input

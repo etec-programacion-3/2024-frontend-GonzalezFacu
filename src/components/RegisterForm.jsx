@@ -18,7 +18,7 @@ function RegisterForm() {
     setLoading(true);
 
     if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+      alert("Las contraseñas no coinciden!");
       setLoading(false);
       return;
     }
@@ -30,9 +30,13 @@ function RegisterForm() {
         email,
         password,
       });
+      alert("Registro exitoso! Ahora puedes iniciar sesión.");
       navigate("/login");
     } catch (error) {
-      alert(error);
+      alert(
+        "Error durante el registro: " +
+          (error.response?.data?.detail || error.message)
+      );
     } finally {
       setLoading(false);
     }
@@ -40,13 +44,13 @@ function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
-      <h1>Register</h1>
+      <h1>Registrar</h1>
       <input
         className="form-input"
         type="text"
         value={firstName}
         onChange={(e) => setFirstName(e.target.value)}
-        placeholder="First Name"
+        placeholder="Nombre"
         required
       />
       <input
@@ -54,7 +58,7 @@ function RegisterForm() {
         type="text"
         value={lastName}
         onChange={(e) => setLastName(e.target.value)}
-        placeholder="Last Name"
+        placeholder="Apellido"
         required
       />
       <input
@@ -62,7 +66,7 @@ function RegisterForm() {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
+        placeholder="Correo Electrónico"
         required
       />
       <input
@@ -70,7 +74,7 @@ function RegisterForm() {
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
+        placeholder="Contraseña"
         required
       />
       <input
@@ -78,12 +82,12 @@ function RegisterForm() {
         type="password"
         value={confirmPassword}
         onChange={(e) => setConfirmPassword(e.target.value)}
-        placeholder="Confirm Password"
+        placeholder="Confirmar Contraseña"
         required
       />
       {loading && <LoadingIndicator />}
-      <button className="form-button" type="submit">
-        Register
+      <button className="form-button" type="submit" disabled={loading}>
+        Registrar
       </button>
     </form>
   );

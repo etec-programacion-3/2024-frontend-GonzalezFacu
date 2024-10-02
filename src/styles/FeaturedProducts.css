@@ -1,0 +1,34 @@
+/* src/components/FeaturedProducts.css */
+.featured-products {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.featured-products-container {
+  display: flex;
+  justify-content: space-around; /* Espacio entre los productos */
+  flex-wrap: wrap; /* Permite que los productos se ajusten en múltiples líneas si es necesario */
+}
+
+.featured-product {
+  flex: 1 1 250px; /* Cada producto ocupará al menos 250px y se expandirá */
+  margin: 1rem; /* Espaciado entre productos */
+  background-color: #f4f4f4; /* Fondo gris claro para cada producto */
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.featured-product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.featured-product h3 {
+  font-size: 1.25rem;
+}
+
+.featured-product p {
+  font-size: 0.875rem;
+}

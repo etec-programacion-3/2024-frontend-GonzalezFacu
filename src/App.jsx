@@ -14,7 +14,6 @@ import Planes from "./pages/Planes";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
-import Productos from "./components/Productos";
 
 function Logout() {
   localStorage.clear();
@@ -35,7 +34,6 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/productos" element={<Productos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />

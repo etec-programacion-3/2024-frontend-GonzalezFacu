@@ -35,7 +35,7 @@ const FeaturedProducts = () => {
     <section className="featured-products">
       <h2>Productos Destacados</h2>
       <div className="featured-products-container">
-        {productos.slice(0, 3).map((product) => (
+        {productos.slice(0, 4).map((product) => (
           <div className="featured-product" key={product.id}>
             <img src={product.imagen} alt={product.nombre} />
             <h3>{product.nombre}</h3>

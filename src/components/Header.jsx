@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import "../styles/Header.css";
+import "../styles/HeaderFooter.css";
 
 function Header() {
   const { isAuthorized } = useAuth();

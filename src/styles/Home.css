@@ -17,7 +17,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 120px; /* Reducida altura mínima */
+  min-height: 0px; /* Reducida altura mínima */
+  max-height: 90px;
 }
 
 .hero-text {

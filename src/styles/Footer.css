@@ -1,0 +1,32 @@
+/* Footer.css */
+
+.footer {
+  background-color: #343a40; /* Fondo oscuro para el footer */
+  color: #ffffff; /* Texto blanco */
+  padding: 1rem 0; /* Espaciado superior e inferior */
+  text-align: center; /* Centrar el texto */
+}
+
+.footer-container {
+  display: flex; /* Usar flexbox para la alineación */
+  flex-direction: column; /* Alinear los elementos en columna */
+  align-items: center; /* Centrar horizontalmente */
+}
+
+.footer-links {
+  margin-bottom: 0.5rem; /* Espaciado entre enlaces y el nombre */
+}
+
+.footer-link {
+  color: #ffffff; /* Color de los enlaces */
+  margin: 0 1rem; /* Espaciado entre enlaces */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.footer-link:hover {
+  text-decoration: underline; /* Subrayar al pasar el ratón */
+}
+
+.footer-brand {
+  font-size: 1.2rem; /* Aumentar el tamaño del texto del nombre */
+}

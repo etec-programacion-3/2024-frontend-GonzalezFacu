@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import "../styles/HeaderFooter.css";
+import "../styles/Header.css";
 
 function Header() {
   const { isAuthorized } = useAuth();
@@ -54,11 +54,6 @@ function Header() {
             />
             <button className="search-button">🔍</button>
           </div>
-
-          <Link to="/carrito" className="cart-link">
-            🛒
-            <span className="cart-count">0</span>
-          </Link>
 
           {isAuthorized ? (
             <Link to="/perfil" className="profile-link">

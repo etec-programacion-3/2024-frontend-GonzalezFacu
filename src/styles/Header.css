@@ -1,0 +1,118 @@
+.header {
+  background-color: #343a40; /* Color de fondo oscuro */
+  color: #ffffff; /* Texto en blanco */
+  padding: 1rem 2rem; /* Espaciado en los costados del header */
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Mantener espacio entre logo, nav y acciones */
+}
+
+.logo-link {
+  margin-left: 35px; /* Margen izquierdo para el logo */
+  font-size: 2rem; /* Tamaño de fuente para el logo */
+  font-weight: bold; /* Negrita para el logo */
+  color: #ffffff; /* Color del logo */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.nav {
+  flex-grow: 1; /* Permitir que el nav ocupe el espacio restante */
+  display: flex; /* Alinear los elementos del nav */
+  justify-content: center; /* Centrar el nav */
+}
+
+.nav-list {
+  display: flex; /* Listado horizontal */
+  list-style: none; /* Sin viñetas */
+  padding: 0; /* Sin padding */
+  margin: 0; /* Sin margen */
+}
+
+.nav-list li {
+  margin: 0 1.2rem; /* Espacio entre elementos */
+}
+
+.nav-link {
+  font-size: 1.2rem; /* Aumentar tamaño de fuente */
+  color: #ffffff; /* Color de los enlaces */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s; /* Efecto de transición en el color */
+}
+
+.nav-link:hover {
+  color: #007bff; /* Color al pasar el ratón */
+}
+
+.header-actions {
+  display: flex; /* Almacenar acciones en línea */
+  align-items: center; /* Alinear verticalmente */
+}
+
+.search-container {
+  position: relative;
+  width: 300px; /* Ancho inicial */
+  height: 40px; /* Altura inicial */
+  margin: 20px 125px; /* Margen en los costados */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.search-input {
+  width: 100%; /* Ancho completo */
+  height: 100%; /* Altura completa */
+  background-color: #4a5568; /* Gris oscuro para el input */
+  color: #f5f5f5; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 0 0 0 20px; /* Espaciado interno */
+  font-size: 16px; /* Tamaño de fuente */
+  outline: none; /* Sin contorno */
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+.search-button {
+  position: absolute;
+  right: 0; /* Posición a la derecha */
+  top: 50%; /* Centrar verticalmente */
+  transform: translateY(-50%); /* Ajustar posición */
+  background: none; /* Sin fondo */
+  border: none; /* Sin borde */
+  color: #e2e8f0; /* Gris más claro para el botón */
+  cursor: pointer; /* Cursor de puntero */
+  font-size: 20px; /* Tamaño de fuente */
+}
+
+.search-container.expanded {
+  transform: scale(1.05); /* Escalar al expandir */
+  z-index: 10; /* Elevar por encima de otros elementos */
+}
+
+.search-container.expanded .search-input {
+  box-shadow: 0 0 10px rgba(212, 182, 165, 0.5); /* Sombra suave */
+}
+
+.profile-link,
+.login-button {
+  margin-right: 35px; /* Espacio a la derecha de los enlaces */
+  color: #cecece; /* Gris claro para los enlaces */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease; /* Efecto de transición en el color */
+}
+
+.profile-link:hover {
+  color: #ffffff; /* Color al pasar el ratón */
+}
+
+.login-button {
+  background-color: #cecece; /* Color de fondo para el botón */
+  color: #2d3748; /* Gris oscuro para el texto del botón */
+  padding: 0.5rem 1rem; /* Espaciado interno */
+  border-radius: 9999px; /* Bordes totalmente redondeados */
+  transition: background-color 0.3s ease; /* Efecto de transición en el fondo */
+}
+
+.login-button:hover {
+  background-color: #ffffff; /* Color de fondo al pasar el ratón */
+}

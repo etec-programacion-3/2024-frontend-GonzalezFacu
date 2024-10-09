@@ -1,30 +1,28 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import "../styles/HeaderFooter.css";
+// Footer.jsx
+import React from "react";
+import "../styles/Footer.css"; // Asegúrate de que este archivo CSS esté creado
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer>
-      <p>&copy; 2024 GourmetKits. Todos los derechos reservados.</p>
-      <ul className="footer-list">
-        <li>
-          <Link to="/contacto" className="footer-link">
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-links">
+          <div className="footer-brand">
+            <p>GourmetKits ®</p>
+          </div>
+          <a href="/contacto" className="footer-link">
             Contacto
-          </Link>
-        </li>
-        <li>
-          <Link to="/terminos" className="footer-link">
-            Términos de Servicio
-          </Link>
-        </li>
-        <li>
-          <Link to="/privacidad" className="footer-link">
-            Política de Privacidad
-          </Link>
-        </li>
-      </ul>
+          </a>
+          <a href="/terminos" className="footer-link">
+            Términos y Condiciones
+          </a>
+          <a href="/privacidad" className="footer-link">
+            Privacidad
+          </a>
+        </div>
+      </div>
     </footer>
   );
-};
+}
 
 export default Footer;

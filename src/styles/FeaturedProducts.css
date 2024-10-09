@@ -1,34 +1,86 @@
-/* src/components/FeaturedProducts.css */
+/* FeaturedProducts.css */
+
 .featured-products {
-  padding: 2rem 1rem;
+  padding: 2rem;
+  background-color: #fff; /* Fondo blanco para el componente */
   text-align: center;
 }
 
-.featured-products-container {
+.products-container {
   display: flex;
-  justify-content: space-around; /* Espacio entre los productos */
-  flex-wrap: wrap; /* Permite que los productos se ajusten en múltiples líneas si es necesario */
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
-.featured-product {
-  flex: 1 1 250px; /* Cada producto ocupará al menos 250px y se expandirá */
-  margin: 1rem; /* Espaciado entre productos */
-  background-color: #f4f4f4; /* Fondo gris claro para cada producto */
+.product-card {
+  display: flex; /* Flex para que la imagen y la info estén en línea */
+  background-color: #f9f9f9; /* Fondo suave para las tarjetas */
+  border: 1px solid #e0e0e0; /* Borde suave */
+  border-radius: 8px;
   padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem; /* Aumentar el margen para más espacio entre tarjetas */
+  width: 40%; /* Mantener el ancho de la tarjeta en 40% */
+  max-width: 540px; /* Ancho máximo para mantener la uniformidad */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  align-items: center; /* Centrar verticalmente */
 }
 
-.featured-product img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+.product-image {
+  border-radius: 4px;
+  width: 200px; /* Mantener el ancho de la imagen en 150px */
+  height: auto; /* Mantener la proporción de la imagen */
+  margin-right: 1rem; /* Espacio a la derecha de la imagen */
+  flex-shrink: 0; /* Para evitar que la imagen se reduzca */
 }
 
-.featured-product h3 {
-  font-size: 1.25rem;
+.product-info {
+  text-align: left; /* Alinear el texto a la izquierda */
+  display: flex;
+  flex-direction: column; /* Alinear la información en columna */
+  justify-content: space-between; /* Espaciado entre los elementos */
+  height: 200px; /* Altura fija para la sección de información */
 }
 
-.featured-product p {
-  font-size: 0.875rem;
+.product-name {
+  font-size: 1.4rem; /* Aumentar el tamaño del nombre del producto */
+  margin: 0.5rem 0;
+}
+
+.product-price {
+  font-size: 1.2rem; /* Aumentar el tamaño del precio */
+  color: #555; /* Color gris para el precio */
+}
+
+.product-description {
+  font-size: 0.9rem; /* Tamaño de fuente para la descripción */
+  color: #666; /* Color gris más claro para la descripción */
+  margin: 0.5rem 0; /* Espaciado alrededor de la descripción */
+  flex-grow: 1; /* Hacer que el cuadro de descripción ocupe el espacio disponible */
+}
+
+.more-info-button {
+  width: 50%;
+  background-color: #007bff; /* Color azul */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.more-info-button:hover {
+  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+.star-rating {
+  color: #ffcc00; /* Color dorado para las estrellas */
+}
+
+.star {
+  font-size: 1.2rem; /* Tamaño de las estrellas */
+}
+
+.star.filled {
+  color: #ffcc00; /* Color dorado para las estrellas llenas */
 }

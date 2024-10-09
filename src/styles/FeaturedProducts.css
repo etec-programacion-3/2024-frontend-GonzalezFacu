@@ -2,7 +2,6 @@
 
 .featured-products {
   padding: 2rem;
-  background-color: #fff; /* Fondo blanco para el componente */
   text-align: center;
 }
 
@@ -15,36 +14,35 @@
 
 .product-card {
   display: flex; /* Flex para que la imagen y la info estén en línea */
-  background-color: #f9f9f9; /* Fondo suave para las tarjetas */
+  flex-direction: column;
+  background-color: #eaeaea; /* Fondo suave para las tarjetas */
   border: 1px solid #e0e0e0; /* Borde suave */
   border-radius: 8px;
   padding: 1rem;
   margin: 2rem; /* Aumentar el margen para más espacio entre tarjetas */
-  width: 40%; /* Mantener el ancho de la tarjeta en 40% */
-  max-width: 540px; /* Ancho máximo para mantener la uniformidad */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  align-items: center; /* Centrar verticalmente */
+  height: 540px;
+  width: 350px + 2rem; /* Mantener el ancho de la tarjeta en 40% */
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
 .product-image {
   border-radius: 4px;
-  width: 200px; /* Mantener el ancho de la imagen en 150px */
-  height: auto; /* Mantener la proporción de la imagen */
-  margin-right: 1rem; /* Espacio a la derecha de la imagen */
-  flex-shrink: 0; /* Para evitar que la imagen se reduzca */
+  width: 350px; /* Mantener el ancho de la imagen en 150px */
+  height: 200px; /* Mantener la proporción de la imagen */
+  margin-bottom: 1rem;
 }
 
 .product-info {
-  text-align: left; /* Alinear el texto a la izquierda */
   display: flex;
-  flex-direction: column; /* Alinear la información en columna */
-  justify-content: space-between; /* Espaciado entre los elementos */
-  height: 200px; /* Altura fija para la sección de información */
+  text-align: left;
+  flex-direction: column;
+  width: 350px;
+  height: 250px; /* Altura fija para la sección de información */
 }
 
 .product-name {
   font-size: 1.4rem; /* Aumentar el tamaño del nombre del producto */
-  margin: 0.5rem 0;
+  margin: 0.25rem 0 0;
 }
 
 .product-price {
@@ -55,7 +53,6 @@
 .product-description {
   font-size: 0.9rem; /* Tamaño de fuente para la descripción */
   color: #666; /* Color gris más claro para la descripción */
-  margin: 0.5rem 0; /* Espaciado alrededor de la descripción */
   flex-grow: 1; /* Hacer que el cuadro de descripción ocupe el espacio disponible */
 }
 
@@ -74,11 +71,11 @@
 }
 
 .star-rating {
-  color: #ffcc00; /* Color dorado para las estrellas */
+  color: #9c9c9c; /* Color dorado para las estrellas */
 }
 
 .star {
-  font-size: 1.2rem; /* Tamaño de las estrellas */
+  font-size: 2rem; /* Tamaño de las estrellas */
 }
 
 .star.filled {

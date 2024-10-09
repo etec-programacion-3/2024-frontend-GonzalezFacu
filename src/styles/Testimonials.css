@@ -1,8 +1,5 @@
-/* Testimonials.css */
-
 .testimonials {
   padding: 2rem;
-  background-color: #f9f9f9; /* Color suave para el fondo */
   text-align: center;
 }
 
@@ -14,28 +11,42 @@
 }
 
 .testimonial-card {
-  background-color: #ffffff; /* Fondo blanco para los testimonios */
-  border: 1px solid #e0e0e0; /* Borde suave */
+  background-color: #eaeaea;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1rem;
-  margin: 0.5rem;
-  max-width: 300px; /* Ancho máximo para las tarjetas */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 1rem;
+  max-width: 300px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
 }
 
 .testimonial-text {
-  font-style: italic; /* Texto en cursiva para los testimonios */
+  font-style: italic;
 }
 
 .testimonial-author {
   margin-top: 0.5rem;
-  font-weight: bold; /* Negrita para el nombre del autor */
+  font-weight: bold;
 }
 
 .testimonial-image {
-  border-radius: 50%; /* Imágenes en forma de círculo */
-  width: 80px; /* Ajustar el tamaño */
-  height: 80px; /* Ajustar el tamaño */
-  object-fit: cover; /* Mantener la relación de aspecto */
-  margin-bottom: 0.5rem; /* Espacio debajo de la imagen */
+  border-radius: 4px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+.star-rating {
+  color: #ffcc00; /* Color dorado para las estrellas */
+  margin: 0.5rem 0;
+}
+
+.star {
+  font-size: 1.5rem; /* Tamaño de las estrellas */
+  color: #9c9c9c; /* Color gris claro para las estrellas vacías */
+}
+
+.star.filled {
+  color: #ffcc00; /* Color dorado para las estrellas llenas */
 }

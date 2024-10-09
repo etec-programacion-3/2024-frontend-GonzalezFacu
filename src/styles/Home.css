@@ -2,6 +2,8 @@
 
 html,
 body {
+  /*background-color: #000000;*/
+  background-color: #eeeeee;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +13,7 @@ body {
   position: relative;
   text-align: center;
   background-color: #333; /* Gris oscuro para el fondo del hero */
-  color: #fff;
+  color: #ffffff;
   padding: 2rem 1rem; /* Reducido padding para una sección más compacta */
   display: flex;
   flex-direction: column;

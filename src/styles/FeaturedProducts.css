@@ -20,7 +20,7 @@
   border-radius: 8px;
   padding: 1rem;
   margin: 2rem; /* Aumentar el margen para más espacio entre tarjetas */
-  height: 540px;
+  height: 490px;
   width: 350px + 2rem; /* Mantener el ancho de la tarjeta en 40% */
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
@@ -43,6 +43,8 @@
 .product-name {
   font-size: 1.4rem; /* Aumentar el tamaño del nombre del producto */
   margin: 0.25rem 0 0;
+  height: 60px;
+  flex-shrink: 0;
 }
 
 .product-price {

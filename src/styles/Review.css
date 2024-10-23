@@ -1,35 +1,38 @@
-.testimonials {
+.review {
   padding: 2rem;
   text-align: center;
 }
 
-.testimonials-container {
+.review-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1rem;
 }
 
-.testimonial-card {
+.review-card {
   background-color: #eaeaea;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1rem;
   margin: 1rem;
-  max-width: 300px;
+  width: 330px;
+  height: 260px;
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
 }
 
-.testimonial-text {
+.review-content {
   font-style: italic;
+  height: 50px;
+  flex-shrink: 0;
 }
 
-.testimonial-author {
+.review-author {
   margin-top: 0.5rem;
   font-weight: bold;
 }
 
-.testimonial-image {
+.review-image {
   border-radius: 4px;
   width: 100px;
   height: 100px;

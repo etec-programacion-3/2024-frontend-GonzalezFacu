@@ -2,7 +2,7 @@ import "../styles/Home.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FeaturedProducts from "../components/FeaturedProducts";
-import Testimonials from "../components/Testimonials";
+import Review from "../components/Review";
 import HeroSection from "../components/HeroSection";
 
 function Home() {
@@ -12,7 +12,7 @@ function Home() {
       <main>
         <HeroSection />
         <FeaturedProducts />
-        <Testimonials />
+        <Review />
       </main>
       <Footer />
     </div>

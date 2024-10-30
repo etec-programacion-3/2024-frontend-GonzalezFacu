@@ -1,0 +1,28 @@
+.product {
+  padding: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+}
+
+.product-card {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+/* Tarjetas grandes ocupan dos columnas y dos filas */
+.product-card.large {
+  grid-column: span 2; /* Ocupa dos columnas */
+  grid-row: span 1; /* Ocupa dos filas */
+  font-size: 1.2rem;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}

@@ -23,8 +23,8 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/kits-internacionales" className="nav-link">
-                Kits Internacionales
+              <Link to="/menu" className="nav-link">
+                Menu
               </Link>
             </li>
             <li>

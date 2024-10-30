@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
 import "../styles/FeaturedProducts.css"; // Asegúrate de tener tu archivo CSS
+import React, { useEffect, useState } from "react";
 import api from "../api";
 
 function FeaturedProducts() {

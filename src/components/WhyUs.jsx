@@ -1,28 +1,33 @@
 import React from "react";
 import "../styles/WhyUs.css"; // Asegúrate de tener un archivo de estilos para esto
+import { Link } from "react-router-dom";
 
 function WhyUs() {
   const reasons = [
     {
       icon: "🍃",
       title: "Frescura Garantizada",
-      description: "Nuestros ingredientes son frescos y de la mejor calidad, seleccionados diariamente."
+      description:
+        "Nuestros ingredientes son frescos y de la mejor calidad, seleccionados diariamente.",
     },
     {
       icon: "⏱️",
       title: "Fácil y Rápido",
-      description: "Prepara platos deliciosos en menos de 30 minutos con nuestras recetas fáciles de seguir."
+      description:
+        "Prepara platos deliciosos en menos de 30 minutos con nuestras recetas fáciles de seguir.",
     },
     {
       icon: "🍽️",
       title: "Variedad en el Menú",
-      description: "Ofrecemos una amplia variedad de platos para todos los gustos y preferencias dietéticas."
+      description:
+        "Ofrecemos una amplia variedad de platos para todos los gustos y preferencias dietéticas.",
     },
     {
       icon: "🌍",
       title: "Sostenible",
-      description: "Nos preocupamos por el medio ambiente y utilizamos empaques sostenibles."
-    }
+      description:
+        "Nos preocupamos por el medio ambiente y utilizamos empaques sostenibles.",
+    },
   ];
 
   return (
@@ -37,7 +42,9 @@ function WhyUs() {
           </div>
         ))}
       </div>
-      <button className="explore-menu-button">Explorar nuestro Menú</button>
+      <Link to="/menu" className="explore-menu-button">
+        Explora nuestro menu
+      </Link>
     </section>
   );
 }

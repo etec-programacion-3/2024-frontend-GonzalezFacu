@@ -3,44 +3,64 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 50px auto;
-  padding: 20px;
+  margin: 60px auto; /* Aumentado */
+  padding: 30px; /* Aumentado */
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  background-color: #2d3748; /* Fondo gris oscuro */
-  color: #f5f5f5; /* Texto gris claro */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Aumentado */
+  max-width: 450px; /* Aumentado */
+  background-color: #2d3748; /* Gris oscuro para coincidir con el header */
+  color: #f5f5f5; /* Gris claro para el texto */
 }
 
 .form-input {
   width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
+  padding: 15px; /* Aumentado */
+  margin: 15px 0; /* Aumentado */
+  border: 1px solid #4a5568; /* Gris oscuro para los bordes */
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #4a5568; /* Fondo gris más oscuro para inputs */
-  color: #f5f5f5; /* Texto gris claro para inputs */
+  background-color: #4a5568; /* Gris oscuro para el fondo del input */
+  color: #f5f5f5; /* Gris claro para el texto del input */
+  font-size: 16px; /* Aumentado */
 }
 
 .form-button {
   width: 95%;
-  padding: 10px;
-  margin: 20px 0;
-  background-color: #007bff; /* Color de fondo del botón */
+  padding: 15px; /* Aumentado */
+  margin: 25px 0; /* Aumentado */
+  background-color: #0064d0; /* Color primario del sitio */
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  font-size: 16px; /* Aumentado */
 }
 
 .form-button:hover {
-  background-color: #0056b3; /* Color de fondo del botón en hover */
+  background-color: #004792; /* Color más oscuro para el hover */
 }
 
-/* Elimina las reglas CSS para el botón de visibilidad de contraseña */
+.form-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 25px; /* Aumentado */
+}
 
+.form-link {
+  color: #d4b6a5; /* Beige cardamomo para los enlaces */
+  text-decoration: none;
+  transition: color 0.3s ease; /* Ajustado */
+  font-size: 14px; /* Aumentado */
+}
+
+.form-link:hover {
+  color: #b89d8d; /* Beige ligeramente más oscuro para el hover */
+  text-decoration: underline;
+}
+
+/* Ajustes responsivos si es necesario */
 @media (min-width: 768px) {
-  /* Ajustes responsivos si es necesario */
+  /* Ajustes para pantallas más grandes si es necesario */
 }

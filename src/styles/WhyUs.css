@@ -1,11 +1,15 @@
 .why-us {
   text-align: center;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20px;
 }
 
 .reasons-container {
+  font-size: 15px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
   margin-top: 1rem;
@@ -26,6 +30,8 @@
 }
 
 .explore-menu-button {
+  width: 150px;
+  text-decoration: none;
   margin-top: 2rem;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;

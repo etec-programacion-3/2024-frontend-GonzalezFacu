@@ -9,7 +9,7 @@ import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Perfil from "./pages/Perfil";
 import Home from "./pages/Home";
-import Contacto from "./pages/Contacto";
+import Contact from "./pages/Contact";
 import Planes from "./pages/Planes";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -40,7 +40,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
           <Route path="/Planes" element={<Planes />} />
-          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>

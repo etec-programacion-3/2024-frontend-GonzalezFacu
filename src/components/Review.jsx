@@ -44,11 +44,14 @@ function Review() {
     return <div className="star-rating">{stars}</div>;
   }
 
+  // Mostrar solo las primeras 3 reseñas
+  const limitedReviews = reviews.slice(0, 5);
+
   return (
     <section className="review">
       <h2>Lo que dicen nuestros clientes</h2>
       <div className="review-container">
-        {reviews.map((review) => (
+        {limitedReviews.map((review) => (
           <div key={review.id} className="review-card">
             <img
               src={review.product.image}

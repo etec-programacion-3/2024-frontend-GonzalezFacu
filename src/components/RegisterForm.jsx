@@ -1,7 +1,7 @@
 import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";
-import "../styles/RegisterForm.css";
+import "../styles/RegisterForm.css"; // Asegúrate de que tu CSS refleje los cambios
 import LoadingIndicator from "./LoadingIndicator";
 
 function RegisterForm() {
@@ -44,7 +44,7 @@ function RegisterForm() {
 
   return (
     <form onSubmit={handleSubmit} className="form-container">
-      <h1>Registrar</h1>
+      <h1 className="form-title">Registrar</h1>
       <input
         className="form-input"
         type="text"

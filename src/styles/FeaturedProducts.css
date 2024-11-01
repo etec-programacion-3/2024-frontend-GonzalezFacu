@@ -1,66 +1,67 @@
-/* FeaturedProducts.css */
-
-.featured-products {
+.fp-featured-products {
   padding: 2rem;
   text-align: center;
+  font-size: 20px;
 }
 
-.products-container {
+.fp-product-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 1rem;
 }
 
-.product-card {
-  display: flex; /* Flex para que la imagen y la info estén en línea */
+.fp-product-card {
+  display: flex;
   flex-direction: column;
-  background-color: #eaeaea; /* Fondo suave para las tarjetas */
-  border: 1px solid #e0e0e0; /* Borde suave */
+  background-color: #eaeaea;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 1rem;
-  margin: 2rem; /* Aumentar el margen para más espacio entre tarjetas */
-  height: 490px;
-  width: 350px + 2rem; /* Mantener el ancho de la tarjeta en 40% */
-  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  margin: 2rem;
+  height: 570px;
+  width: 350px + 2rem;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
 }
 
-.product-image {
+.fp-product-image {
   border-radius: 4px;
-  width: 350px; /* Mantener el ancho de la imagen en 150px */
-  height: 200px; /* Mantener la proporción de la imagen */
-  margin-bottom: 1rem;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
 }
 
-.product-info {
+.fp-product-info {
+  margin: 1rem;
   display: flex;
   text-align: left;
   flex-direction: column;
   width: 350px;
-  height: 250px; /* Altura fija para la sección de información */
+  height: 250px;
 }
 
-.product-name {
-  font-size: 1.4rem; /* Aumentar el tamaño del nombre del producto */
+.fp-product-name {
+  font-size: 1.4rem;
   margin: 0.25rem 0 0;
-  height: 60px;
+  height: 30px;
   flex-shrink: 0;
 }
 
-.product-price {
-  font-size: 1.2rem; /* Aumentar el tamaño del precio */
-  color: #555; /* Color gris para el precio */
+.fp-product-price {
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  color: #555;
 }
 
-.product-description {
-  font-size: 0.9rem; /* Tamaño de fuente para la descripción */
-  color: #666; /* Color gris más claro para la descripción */
-  flex-grow: 1; /* Hacer que el cuadro de descripción ocupe el espacio disponible */
+.fp-product-shortDescription {
+  font-size: 0.9rem;
+  color: #666;
+  flex-grow: 1;
 }
 
-.more-info-button {
+.fp-more-info-button {
+  margin: 0.5rem;
   width: 50%;
-  background-color: #007bff; /* Color azul */
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 4px;
@@ -68,18 +69,18 @@
   cursor: pointer;
 }
 
-.more-info-button:hover {
-  background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+.fp-more-info-button:hover {
+  background-color: #0056b3;
 }
 
-.star-rating {
-  color: #9c9c9c; /* Color dorado para las estrellas */
+.fp-star-rating {
+  color: #9c9c9c;
 }
 
-.star {
-  font-size: 2rem; /* Tamaño de las estrellas */
+.fp-star {
+  font-size: 1.5rem;
 }
 
-.star.filled {
-  color: #ffcc00; /* Color dorado para las estrellas llenas */
+.fp-star.fp-filled {
+  color: #ffcc00;
 }

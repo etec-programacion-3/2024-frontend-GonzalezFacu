@@ -1,0 +1,63 @@
+.contact-page {
+  padding: 40px;
+  background-color: #f7f7f7; /* Color de fondo suave */
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.contact_h1,
+.contact_h2 {
+  color: #0064d0; /* Color de encabezado */
+}
+
+.contact-links {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.contact-links li {
+  margin: 10px 0;
+}
+
+.contact-links a {
+  text-decoration: none;
+  color: #0064d0;
+  transition: color 0.3s ease;
+  font-weight: bold; /* Hacer el texto más destacado */
+}
+
+.contact-links a:hover {
+  color: #004792; /* Color más oscuro para el hover */
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.faq-card {
+  background-color: #ffffff; /* Fondo blanco para las tarjetas */
+  border: 1px solid #ddd; /* Borde sutil */
+  border-radius: 12px; /* Esquinas redondeadas */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s; /* Efecto de transformación */
+}
+
+.faq-card:hover {
+  transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.faq-card h3 {
+  margin: 0 0 10px;
+  color: #0064d0; /* Color de los títulos */
+  font-size: 1.2em; /* Aumentar el tamaño del texto */
+}
+
+.faq-card p {
+  margin: 0;
+  color: #666; /* Texto más suave para las respuestas */
+}

@@ -25,6 +25,7 @@
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.2);
   height: 470px;
   width: 450px;
+  transition: ease 300ms;
 }
 
 .product-card.large {
@@ -32,6 +33,10 @@
   grid-row: span 2;
   height: 972px; /* Ajusta la altura si es necesario */
   width: 932px;
+}
+
+.product-card:hover {
+  scale: 1.03;
 }
 
 .product-image {

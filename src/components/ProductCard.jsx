@@ -3,6 +3,7 @@ import placeholderUserImage from "../assets/placeholderUserImage.jpg";
 import api from "../api";
 import "../styles/ProductCard.css";
 import ProductModal from "./ProductModal";
+import { useCart } from "../contexts/CartContext"; // Asegúrate de importar el contexto del carrito
 
 function ProductCard() {
   const [products, setProducts] = useState([]);
@@ -10,6 +11,9 @@ function ProductCard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // Obtener funciones del CartContext
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProductsAndReviews = async () => {
@@ -52,6 +56,11 @@ function ProductCard() {
     setSelectedProduct(null); // Cierra el modal
   };
 
+  // Función para manejar la adición al carrito
+  const handleAddToCart = (product) => {
+    addToCart(product, 1); // Llama a la función addToCart del contexto
+  };
+
   return (
     <section className="menu-products">
       <h2>Nuestro Menú</h2>
@@ -89,6 +98,15 @@ function ProductCard() {
                     ${product.price}
                   </p>
                   <StarRating rating={product.rating} />
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation(); // Evita que el modal se abra al hacer clic en "Agregar al carrito"
+                      handleAddToCart(product.id);
+                    }}
+                    className="add-to-cart-button"
+                  >
+                    Agregar al Carrito
+                  </button>
                   {isLarge && (
                     <div className="product-reviews">
                       {productReviews.length > 0 ? (

@@ -1,79 +1,91 @@
-// CartContext.jsx
-import React, { createContext, useState, useEffect } from "react";
-import api from "./../api"; // Asegúrate de que la ruta sea correcta
+import React, { createContext, useContext, useState, useEffect } from "react";
+import api from "../api";
 
-export const CartContext = createContext();
+const CartContext = createContext();
+
+export const useCart = () => {
+  return useContext(CartContext);
+};
+
+export { CartContext };
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [cart, setCart] = useState({ items: [] });
 
-  // Función para obtener los elementos del carrito desde la API
-  const fetchCartItems = async () => {
+  // Este useEffect solo se ejecutará una vez al montar el componente
+  useEffect(() => {
+    fetchCart();
+  }, []); // Dependencia vacía, solo se ejecuta una vez
+
+  // Función para cargar el carrito
+  const fetchCart = async () => {
     try {
-      const response = await api.get("/api/cart/"); // Usa la instancia de api
-      setCartItems(response.data[0]?.items || []);
+      const response = await api.get("/api/cart/");
+      const data = response.data;
+
+      // Si la respuesta es válida, actualizamos el carrito
+      if (data && Array.isArray(data) && data[0]) {
+        setCart(data[0]);
+      }
     } catch (error) {
-      console.error("Error fetching cart items:", error);
-    } finally {
-      setLoading(false);
+      console.error("Error fetching cart:", error);
     }
   };
 
-  useEffect(() => {
-    fetchCartItems(); // Llamar a la función al montar el componente
-  }, []);
-
-  const addToCart = (product) => {
-    setCartItems((prevItems) => {
-      const existingItem = prevItems.find(
-        (item) => item.product.id === product.id
-      );
-      if (existingItem) {
-        return prevItems.map((item) =>
-          item.product.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        return [...prevItems, { product, quantity: 1 }];
-      }
-    });
+  // Función para agregar productos al carrito
+  const addToCart = async (productId, quantity) => {
+    try {
+      const response = await api.post("/api/cart/add/", {
+        product_id: productId,
+        quantity,
+      });
+      setCart(response.data); // Actualizamos el carrito con la respuesta
+    } catch (error) {
+      console.error("Error adding to cart:", error);
+    }
   };
 
-  const updateCart = (productId, quantity) => {
-    setCartItems((prevItems) =>
-      prevItems.map((item) =>
-        item.product.id === productId
-          ? { ...item, quantity: parseInt(quantity) }
-          : item
-      )
-    );
+  // Función para actualizar cantidades del carrito
+  const updateCart = async (itemId, quantity) => {
+    try {
+      const response = await api.patch("/api/cart/update/", {
+        item_id: itemId,
+        quantity,
+      });
+      const updatedItem = response.data;
+
+      setCart((prevCart) => ({
+        ...prevCart,
+        items: prevCart.items.map((item) =>
+          item.id === itemId ? updatedItem : item
+        ),
+      }));
+    } catch (error) {
+      console.error("Error updating cart:", error);
+    }
   };
 
-  const removeFromCart = (productId) => {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item.product.id !== productId)
-    );
+  // Función para eliminar un producto del carrito
+  const removeFromCart = async (itemId) => {
+    try {
+      await api.delete("/api/cart/remove/", { data: { item_id: itemId } });
+      setCart((prevCart) => ({
+        ...prevCart,
+        items: prevCart.items.filter((item) => item.id !== itemId),
+      }));
+    } catch (error) {
+      console.error("Error removing from cart:", error);
+    }
   };
 
-  const totalAmount = cartItems.reduce(
-    (total, item) => total + item.product.price * item.quantity,
-    0
-  );
+  // Proveer los valores del contexto
+  const value = {
+    cart,
+    fetchCart, // Esta función no se debe ejecutar repetidamente
+    addToCart,
+    updateCart,
+    removeFromCart,
+  };
 
-  return (
-    <CartContext.Provider
-      value={{
-        cartItems,
-        loading,
-        addToCart,
-        updateCart,
-        removeFromCart,
-        totalAmount,
-      }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

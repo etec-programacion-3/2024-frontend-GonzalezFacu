@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import "../styles/Header.css";
+import "../assets/font-awesome-4.7.0/css/font-awesome.min.css";
 
 function Header() {
   const { isAuthorized } = useAuth();
@@ -54,7 +55,11 @@ function Header() {
             />
             <button className="search-button">🔍</button>
           </div>
-
+          <div className="cart-image-container">
+            <Link className="cart-button" to="/checkout">
+              <i className="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+            </Link>
+          </div>
           {isAuthorized ? (
             <Link to="/perfil" className="profile-link">
               👤 Mi Perfil

@@ -116,3 +116,8 @@
 .login-button:hover {
   background-color: #ffffff; /* Color de fondo al pasar el ratón */
 }
+
+.cart-button {
+  color: white;
+  margin-right: 90px;
+}

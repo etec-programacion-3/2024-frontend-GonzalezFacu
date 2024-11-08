@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
-import "../styles/Header.css";
-import "../assets/font-awesome-4.7.0/css/font-awesome.min.css";
+import { useAuth } from "../../contexts/AuthContext";
+import "../../styles/layout/Header.css";
+import "../../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css";
 
 function Header() {
   const { isAuthorized } = useAuth();

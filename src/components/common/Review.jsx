@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import "../styles/Review.css";
-import api from "../api"; // Asegúrate de tener configurada tu instancia de Axios correctamente
+import "../../styles/common/Review.css";
+import api from "../../apiConfig/api"; // Asegúrate de tener configurada tu instancia de Axios correctamente
 
 function Review() {
   const [reviews, setReviews] = useState([]); // Estado para las reseñas

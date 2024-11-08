@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ProductModal.css"; // Asegúrate de tener el CSS aquí
+import "../../styles/products/ProductModal.css"; // Asegúrate de tener el CSS aquí
 
 function ProductModal({ product, onClose }) {
   return (

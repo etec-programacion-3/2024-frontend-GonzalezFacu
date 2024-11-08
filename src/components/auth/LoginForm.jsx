@@ -1,10 +1,10 @@
 import { useState } from "react";
-import api from "../api";
+import api from "../../apiConfig/api";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
-import "../styles/LoginForm.css";
-import LoadingIndicator from "./LoadingIndicator";
+import { useAuth } from "../../contexts/AuthContext";
+import { ACCESS_TOKEN, REFRESH_TOKEN } from "../../constants";
+import "../../styles/auth/LoginForm.css";
+import LoadingIndicator from "../common/LoadingIndicator";
 
 function LoginForm() {
   const [email, setEmail] = useState(""); // Cambia `username` a `email`

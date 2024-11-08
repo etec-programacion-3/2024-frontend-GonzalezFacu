@@ -1,5 +1,5 @@
-import Form from "../components/LoginForm";
-import Header from "../components/Header";
+import Form from "../../components/auth/LoginForm";
+import Header from "../../components/layout/Header";
 
 function Login() {
   return (

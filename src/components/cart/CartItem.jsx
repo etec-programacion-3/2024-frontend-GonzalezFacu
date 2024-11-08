@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useCart } from "../contexts/CartContext"; // Para usar las funciones de actualización del carrito
-import api from "../api"; // Importamos api para realizar la llamada GET
-import "../styles/Cart.css";
+import { useCart } from "../../contexts/CartContext"; // Para usar las funciones de actualización del carrito
+import api from "../../apiConfig/api"; // Importamos api para realizar la llamada GET
+import "../../styles/cart/Cart.css";
 
 const CartItem = ({ item }) => {
   const { id, product, quantity } = item;
@@ -52,7 +52,7 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <div className="cart-item">
+    <section className="cart-item">
       {/* Cargamos la imagen solo cuando la hemos obtenido */}
       {productImage ? (
         <img
@@ -80,7 +80,7 @@ const CartItem = ({ item }) => {
       <button className="remove-item" onClick={removeItem}>
         Remove
       </button>
-    </div>
+    </section>
   );
 };
 

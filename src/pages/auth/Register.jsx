@@ -1,5 +1,5 @@
-import Form from "../components/RegisterForm";
-import Header from "../components/Header";
+import Form from "../../components/auth/RegisterForm";
+import Header from "../../components/layout/Header";
 
 function Register() {
   return (

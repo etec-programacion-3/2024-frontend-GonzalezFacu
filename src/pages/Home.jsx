@@ -1,10 +1,10 @@
-import "../styles/Home.css";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import FeaturedProducts from "../components/FeaturedProducts";
-import Review from "../components/Review";
-import HeroSection from "../components/HeroSection";
-import WhyUs from "../components/WhyUs";
+import "../styles/layout/Home.css";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+import FeaturedProducts from "../components/products/FeaturedProducts";
+import Review from "../components/common/Review";
+import HeroSection from "../components/layout/HeroSection";
+import WhyUs from "../components/layout/WhyUs";
 
 function Home() {
   return (

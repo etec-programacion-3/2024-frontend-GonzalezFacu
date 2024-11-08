@@ -1,8 +1,8 @@
 import { useState } from "react";
-import api from "../api";
+import api from "../../apiConfig/api";
 import { useNavigate } from "react-router-dom";
-import "../styles/RegisterForm.css"; // Asegúrate de que tu CSS refleje los cambios
-import LoadingIndicator from "./LoadingIndicator";
+import "../../styles/auth/RegisterForm.css"; // Asegúrate de que tu CSS refleje los cambios
+import LoadingIndicator from "../common/LoadingIndicator";
 
 function RegisterForm() {
   const [firstName, setFirstName] = useState("");

@@ -12,9 +12,9 @@ import Perfil from "./pages/Perfil";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Planes from "./pages/Planes";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import NotFound from "./pages/NotFound";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import NotFound from "./pages/common/NotFound";
 import Menu from "./pages/Menu";
 import Checkout from "./pages/Checkout";
 

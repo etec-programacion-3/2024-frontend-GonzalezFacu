@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
-import { CartContext } from "../contexts/CartContext";
+import { CartContext } from "../../contexts/CartContext";
 import CartItem from "./CartItem";
-import "../styles/Cart.css";
+import "../../styles/cart/Cart.css";
 
 const Cart = () => {
   const { cart, fetchCart } = useContext(CartContext);
@@ -42,18 +42,20 @@ const Cart = () => {
     <section className="cart-products">
       <h2>Your Cart</h2>
       <div className="cart-container">
-        {cart.items && cart.items.length > 0 ? (
-          <div>
-            {cart.items.map((item) => (
-              <CartItem key={item.id} item={item} />
-            ))}
-            <div className="total">
-              <h3>Total: ${calculateTotal().toFixed(2)}</h3>
-            </div>
-          </div>
-        ) : (
-          <p>Your cart is empty.</p>
-        )}
+        {/* Left Section - Total */}
+        <div className="cart-total">
+          <h3>Total: ${calculateTotal().toFixed(2)}</h3>
+          <button className="checkout-button">Finalizar compra</button>
+        </div>
+
+        {/* Right Section - Cart Items */}
+        <div className="cart-items">
+          {cart.items && cart.items.length > 0 ? (
+            cart.items.map((item) => <CartItem key={item.id} item={item} />)
+          ) : (
+            <p>Your cart is empty.</p>
+          )}
+        </div>
       </div>
     </section>
   );

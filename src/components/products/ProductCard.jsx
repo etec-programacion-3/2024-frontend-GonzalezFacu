@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import placeholderUserImage from "../assets/placeholderUserImage.jpg";
-import api from "../api";
-import "../styles/ProductCard.css";
+import placeholderUserImage from "../../assets/images/placeholderUserImage.jpg";
+import api from "../../apiConfig/api";
+import "../../styles/products/ProductCard.css";
 import ProductModal from "./ProductModal";
-import { useCart } from "../contexts/CartContext"; // Asegúrate de importar el contexto del carrito
+import { useCart } from "../../contexts/CartContext"; // Asegúrate de importar el contexto del carrito
 
 function ProductCard() {
   const [products, setProducts] = useState([]);

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/WhyUs.css"; // Asegúrate de tener un archivo de estilos para esto
+import "../../styles/layout/WhyUs.css"; // Asegúrate de tener un archivo de estilos para esto
 import { Link } from "react-router-dom";
 
 function WhyUs() {

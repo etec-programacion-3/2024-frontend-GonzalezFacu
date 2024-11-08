@@ -1,6 +1,6 @@
-import "../styles/FeaturedProducts.css"; // Asegúrate de tener tu archivo CSS
+import "../../styles/products/FeaturedProducts.css"; // Asegúrate de tener tu archivo CSS
 import React, { useEffect, useState } from "react";
-import api from "../api";
+import api from "../../apiConfig/api";
 
 function FeaturedProducts() {
   const [products, setProducts] = useState([]);

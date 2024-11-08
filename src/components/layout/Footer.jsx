@@ -1,6 +1,6 @@
 // Footer.jsx
 import React from "react";
-import "../styles/Footer.css"; // Asegúrate de que este archivo CSS esté creado
+import "../../styles/layout/Footer.css"; // Asegúrate de que este archivo CSS esté creado
 
 function Footer() {
   return (

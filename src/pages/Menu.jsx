@@ -1,4 +1,5 @@
 import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import ProductCard from "../components/products/ProductCard";
 
 function Menu() {
@@ -6,6 +7,7 @@ function Menu() {
     <div>
       <Header />
       <ProductCard />
+      <Footer />
     </div>
   );
 }

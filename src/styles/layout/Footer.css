@@ -1,6 +1,7 @@
 /* Footer.css */
 
 .footer {
+  margin-top: 20px;
   background-color: #343a40; /* Fondo oscuro para el footer */
   color: #ffffff; /* Texto blanco */
   padding: 1rem 0; /* Espaciado superior e inferior */

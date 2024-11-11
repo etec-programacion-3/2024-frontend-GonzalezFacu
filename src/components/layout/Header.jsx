@@ -29,11 +29,6 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/comidas-gourmet" className="nav-link">
-                Comidas Gourmet
-              </Link>
-            </li>
-            <li>
               <Link to="/planes" className="nav-link">
                 Planes
               </Link>

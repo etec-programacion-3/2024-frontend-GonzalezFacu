@@ -8,7 +8,7 @@ import {
 import { AuthProvider } from "./contexts/AuthContext";
 import { CartProvider } from "./contexts/CartContext";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Perfil from "./pages/Perfil";
+import Perfil from "./pages/user/Perfil";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Planes from "./pages/Planes";

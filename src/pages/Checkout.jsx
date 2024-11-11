@@ -1,7 +1,7 @@
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import Cart from "../components/cart/Cart";
-import "../styles/layout/Main.css";
+import "../styles/common/Main.css";
 
 function Checkout() {
   return (

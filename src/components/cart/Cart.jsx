@@ -2,17 +2,19 @@ import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../contexts/CartContext";
 import CartItem from "./CartItem";
 import "../../assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css";
+import CheckoutOverlay from "./CheckoutOverlay";
 import "../../styles/cart/Cart.css";
 
 const Cart = () => {
   const { cart, fetchCart } = useContext(CartContext);
   const [loading, setLoading] = useState(true);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState("card");
 
   useEffect(() => {
-    // Aquí solo hacemos la llamada inicial para obtener el carrito.
     const getCartData = async () => {
       try {
-        await fetchCart(); // Solo se hace una vez al principio
+        await fetchCart();
       } catch (error) {
         console.error("Error fetching cart:", error);
       } finally {
@@ -20,9 +22,8 @@ const Cart = () => {
       }
     };
 
-    // Solo se ejecuta una vez
     getCartData();
-  }, []); // Dependencia vacía para que solo se ejecute una vez al inicio
+  }, []);
 
   const calculateTotal = () => {
     if (!cart.items || cart.items.length === 0) return 0;
@@ -43,7 +44,6 @@ const Cart = () => {
     <section className="cart-products">
       <h2 className="cart-tittle">Your Cart</h2>
       <div className="cart-container">
-        {/* Right Section - Cart Items */}
         <div className="cart-items">
           {cart.items && cart.items.length > 0 ? (
             cart.items.map((item) => <CartItem key={item.id} item={item} />)
@@ -51,7 +51,6 @@ const Cart = () => {
             <p>Your cart is empty.</p>
           )}
         </div>
-        {/* Left Section - Total */}
         <div className="cart-total">
           <div className="total-payment">
             <h2>Choose your payment method</h2>
@@ -62,19 +61,23 @@ const Cart = () => {
                   id="card"
                   name="payment-method"
                   value="card"
+                  checked={selectedPaymentMethod === "card"}
+                  onChange={(e) => setSelectedPaymentMethod(e.target.value)}
                 />
-                <i class="fa fa-credit-card fa-3x" aria-hidden="true"></i>
-                <label for="card">Card</label>
+                <i className="fa fa-credit-card fa-3x" aria-hidden="true"></i>
+                <label htmlFor="card">Card</label>
               </div>
               <div>
                 <input
                   type="radio"
-                  id="bank-trasfer"
+                  id="bank-transfer"
                   name="payment-method"
-                  value="bank-trasfer"
+                  value="bank-transfer"
+                  checked={selectedPaymentMethod === "bank-transfer"}
+                  onChange={(e) => setSelectedPaymentMethod(e.target.value)}
                 />
-                <i class="fa fa-university fa-3x" aria-hidden="true"></i>
-                <label for="bank-trasfer">Bank Trasfer</label>
+                <i className="fa fa-university fa-3x" aria-hidden="true"></i>
+                <label htmlFor="bank-transfer">Bank Transfer</label>
               </div>
               <div>
                 <input
@@ -82,14 +85,27 @@ const Cart = () => {
                   id="mercado-pago"
                   name="payment-method"
                   value="mercado-pago"
+                  checked={selectedPaymentMethod === "mercado-pago"}
+                  onChange={(e) => setSelectedPaymentMethod(e.target.value)}
                 />
-                <i class="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
-                <label for="mercado-pago">Mercado Pago</label>
+                <i className="fa fa-handshake-o fa-3x" aria-hidden="true"></i>
+                <label htmlFor="mercado-pago">Mercado Pago</label>
               </div>
             </form>
             <h3>Total: ${calculateTotal().toFixed(2)}</h3>
           </div>
-          <button className="checkout-button">Finalizar compra</button>
+          <button
+            className="checkout-button"
+            onClick={() => setShowOverlay(true)}
+          >
+            Continuar con el Pago
+          </button>
+          {showOverlay && (
+            <CheckoutOverlay
+              onClose={() => setShowOverlay(false)}
+              selectedPaymentMethod={selectedPaymentMethod}
+            />
+          )}
         </div>
       </div>
     </section>
